@@ -3,10 +3,10 @@
 This is a real-time, multiplayer Tic-Tac-Toe game built using Flask, Flask-Sock (WebSockets), and JavaScript. The game allows two players to connect, take turns making moves, and updates the board dynamically through WebSockets.
 
 🔹 Tech Stack:
-Backend: Flask, Flask-Sock (WebSockets)
-Frontend: HTML, CSS, JavaScript
-Game Logic: Server maintains a 3×3 board and tracks player turns.
-Communication: WebSockets enable instant updates between players.
+- Backend: Flask, Flask-Sock (WebSockets)
+- Frontend: HTML, CSS, JavaScript
+- Game Logic: Server maintains a 3×3 board and tracks player turns.
+- Communication: WebSockets enable instant updates between players.
 
 🔹 Features:
 - Live updates via WebSockets (no page refresh required).

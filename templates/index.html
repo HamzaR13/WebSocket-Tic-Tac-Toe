@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe WebSocket</title>
+    <style>
+        /* Basic styling for the page */
+        body { text-align: center; font-family: Arial, sans-serif; }
+
+        /* Centering the Tic-Tac-Toe grid */
+        table { margin: auto; border-collapse: collapse; }
+
+        /* Styling the Tic-Tac-Toe cells */
+        td {
+            width: 100px; height: 100px;
+            text-align: center; font-size: 30px;
+            border: 3px solid orange;
+            cursor: pointer; /* Indicates clickable cells */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hamza's WebSocket Tic-Tac-Toe</h1>
+    <p id="turn-indicator">Waiting for players...</p> <!-- Displays whose turn it is -->
+
+    <!-- Tic-Tac-Toe board as a 3x3 table -->
+    <table id="board">
+        <tr>
+            <td onclick="makeMove(0,0)"></td>
+            <td onclick="makeMove(0,1)"></td>
+            <td onclick="makeMove(0,2)"></td>
+        </tr>
+        <tr>
+            <td onclick="makeMove(1,0)"></td>
+            <td onclick="makeMove(1,1)"></td>
+            <td onclick="makeMove(1,2)"></td>
+        </tr>
+        <tr>
+            <td onclick="makeMove(2,0)"></td>
+            <td onclick="makeMove(2,1)"></td>
+            <td onclick="makeMove(2,2)"></td>
+        </tr>
+    </table>
+
+    <script>
+        // ================================
+        //  WebSocket Connection Setup
+        // ================================
+
+        // Establish a WebSocket connection to the server
+        // "ws://" specifies WebSocket protocol (use "wss://" for secure connections)
+        // `location.host` ensures we connect to the same server as the webpage is served from
+        const socket = new WebSocket(`ws://${location.host}/receiver`);
+
+        // Function to send a player's move to the server
+        function makeMove(row, col) {
+            // Send the row and column as a JSON object to the WebSocket server
+            socket.send(JSON.stringify({ row: row, col: col }));
+        }
+
+        // ===========================
+        //  Handling Server Messages
+        // ===========================
+
+        // This function runs whenever a message is received from the WebSocket server
+        socket.onmessage = function(event) {
+            // Parse the received data from the server
+            const data = JSON.parse(event.data);
+
+            // If the server sends an error message (e.g., invalid move), display it
+            if (data.error) {
+                alert(data.error);
+                return;
+            }
+
+            // Check if there's a winner and display a message
+            if (data.winner) {
+                alert(`Player ${data.winner} wins!`);
+            }
+
+            // ==========================
+            //  Updating the Game Board
+            // ==========================
+
+            // Extract the latest board state from the server
+            const board = data.board;
+
+            // Select all the Tic-Tac-Toe grid cells
+            const cells = document.querySelectorAll("#board td");
+
+            // Update each cell based on the latest game state from the server
+            for (let i = 0; i < 3; i++) {
+                for (let j = 0; j < 3; j++) {
+                    cells[i * 3 + j].innerText = board[i][j]; // Set text to "X", "O", or empty
+                }
+            }
+
+            // Update turn indicator to show whose turn it is
+            if (data.turn) {
+                document.getElementById("turn-indicator").innerText = `Current Turn: ${data.turn}`;
+            }
+        };
+    </script>
+
+</body>
+</html>

@@ -29,6 +29,7 @@ pip install flask flask-sock
 
 python main.py
 
+GAME SCREENSHOTS:
 ![Capture](https://github.com/user-attachments/assets/7593a040-3d30-4a42-a5d5-544a2548402d)
 ![Capture 2](https://github.com/user-attachments/assets/3ceb8f1d-d3ed-467b-a656-a9c42afd5b94)
 ![Capture 3](https://github.com/user-attachments/assets/0ded346f-ca41-45bf-bc83-b052e389a9a6)

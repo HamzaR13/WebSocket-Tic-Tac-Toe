@@ -7,12 +7,13 @@ Backend: Flask, Flask-Sock (WebSockets)
 Frontend: HTML, CSS, JavaScript
 Game Logic: Server maintains a 3×3 board and tracks player turns.
 Communication: WebSockets enable instant updates between players.
+
 🔹 Features:
-✔ Live updates via WebSockets (no page refresh required).
-✔ Turn-based logic with player assignment ("X" and "O").
-✔ Win detection (checks rows, columns, and diagonals).
-✔ Game reset after a win to allow replay.
-✔ Error handling (e.g., invalid moves, full game slots).
+- Live updates via WebSockets (no page refresh required).
+- Turn-based logic with player assignment ("X" and "O").
+- Win detection (checks rows, columns, and diagonals).
+- Game reset after a win to allow replay.
+- Error handling (e.g., invalid moves, full game slots).
 
 SETUP INSTRUCTIONS:
 # Clone the repository

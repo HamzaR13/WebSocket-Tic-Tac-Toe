@@ -30,3 +30,7 @@ pip install flask flask-sock
 # Run the game
 python main.py
 
+![Player Connection](https://raw.githubusercontent.com/HamzaR13/WebSocket-Tic-Tac-Toe/main/images/Capture.PNG)
+![Player Connection](https://raw.githubusercontent.com/HamzaR13/WebSocket-Tic-Tac-Toe/main/images/Capture2.PNG)
+![Player Connection](https://raw.githubusercontent.com/HamzaR13/WebSocket-Tic-Tac-Toe/main/images/Capture3.PNG)
+![Player Connection](https://raw.githubusercontent.com/HamzaR13/WebSocket-Tic-Tac-Toe/main/images/Capture4.PNG)

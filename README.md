@@ -27,11 +27,9 @@ source venv/bin/activate  # On Windows use 'venv\Scripts\activate'
 # Install dependencies
 pip install flask flask-sock
 
-# Run the game![Capture](https://github.com/user-attachments/assets/86f8f3a4-7517-42c7-a84f-f2746290130d)
-
 python main.py
 
-![Player Connection](https://raw.githubusercontent.com/HamzaR13/WebSocket-Tic-Tac-Toe/main/images/Capture.PNG)
-![Player Connection](https://raw.githubusercontent.com/HamzaR13/WebSocket-Tic-Tac-Toe/main/images/Capture2.PNG)
-![Player Connection](https://raw.githubusercontent.com/HamzaR13/WebSocket-Tic-Tac-Toe/main/images/Capture3.PNG)
-![Player Connection](https://raw.githubusercontent.com/HamzaR13/WebSocket-Tic-Tac-Toe/main/images/Capture4.PNG)
+![Capture](https://github.com/user-attachments/assets/7593a040-3d30-4a42-a5d5-544a2548402d)
+![Capture 2](https://github.com/user-attachments/assets/3ceb8f1d-d3ed-467b-a656-a9c42afd5b94)
+![Capture 3](https://github.com/user-attachments/assets/0ded346f-ca41-45bf-bc83-b052e389a9a6)
+![Capture 4](https://github.com/user-attachments/assets/f54c8a74-2beb-49a5-8a8a-7867b9f7bf12)
